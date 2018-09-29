@@ -27,15 +27,31 @@ function sistema(){
             var opt=prompt("1. Eliminar producto 2.Modificar Producto ");
             switch (opt) {
                 case "1":
-                let e=prompt("Ingrese codigo de producto a eliminar ")
-                for(let i=0;i<stock.length;i++){
-                    if(stock[i].codigo==e){
-                        stock.splice(i,1);
+                    let e=prompt("Ingrese codigo de producto a eliminar ");
+                    for(let i=0;i<stock.length;i++){
+                        if(stock[i].codigo==e){
+                            stock.splice(i,1);
+                        }
                     }
-                }
+                        break;
+                case "2":
+                    let f= prompt("Ingrese codigo de producto a modificar");
+                    for(let i=0;i<stock.length;i++){
+                        if(stock[i].codigo==f){
+                            stock[i].codigo=prompt("Ingrese nuevo codigo de producto: ");
+                            stock[i].descripcion=prompt("Ingrese nueva descripcion de producto: ");
+                            stock[i].tipo=prompt("Ingrese un nuevo tipo de producto: ");
+                            stock[i].precioCompra=prompt("Ingrese un nuevo precio de compra: " );
+                            stock[i].precioVenta=prompt("Ingrese un nuevo precio de venta: " );
+                            stock[i].cantStock=prompt("Ingrese nueva cantidad de stock: " );
+
+                        }
+                    }
                     break;
+
                 default:
-                console.log("no borre nada");            }
+                console.log("no borre nada");
+            }
 
             break;
         case "3":
